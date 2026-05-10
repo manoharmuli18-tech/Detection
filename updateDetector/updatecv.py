@@ -5,7 +5,8 @@ import threading
 
 app = Flask(__name__)
 
-model = YOLO(r'D:\minr\face\yolo26x.pt')
+MODEL_URL = "https://drive.google.com/file/d/1ENYmCfEQEExzLmjcpuuWBWquEAqYjxmr/view?usp=drivesdk"
+MODEL_PATH = "yolo26x.pt"
 
 is_running = False
 
