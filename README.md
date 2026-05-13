@@ -1,1 +1,1 @@
-# Detection
+# Detection---> This application is designed for local execution only. Cloud deployment platforms cannot access your system webcam, so features using cv2.VideoCapture(0) and cv2.imshow() will not function correctly online.
