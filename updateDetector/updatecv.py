@@ -2,10 +2,24 @@ from flask import Flask, render_template
 from ultralytics import YOLO
 import cv2
 import threading
+import gdown
+import os
 
 app = Flask(__name__)
 
-model = YOLO(r'D:\minr\face\yolo26x.pt')
+# Google Drive file ID
+FILE_ID = "1ENYmCfEQEExzLmjcpuuWBWquEAqYjxmr"
+
+# Local model path
+MODEL_PATH = "yolo26x.pt"
+
+# Download model if not already present
+if not os.path.exists(MODEL_PATH):
+    url = f"https://drive.google.com/uc?id={FILE_ID}"
+    gdown.download(url, MODEL_PATH, quiet=False)
+
+# Load model
+model = YOLO(MODEL_PATH)
 
 is_running = False
 
